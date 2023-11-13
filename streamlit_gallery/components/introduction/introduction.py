@@ -308,7 +308,7 @@ def main():
     
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     
-    df = read_data("subject/physics/physics_labelled_updated.csv")
+    df = read_data("Subject/Physics/physics_labelled_updated.csv")
     
     # Title of the app
     st.subheader('Input Options')
