@@ -206,7 +206,11 @@ def main():
     gc.enable()
     load_dotenv()
     
-    palm.configure(api_key = os.getenv('PALM_API_KEY'))
+    try:
+        palm.configure(api_key = os.getenv('PALM_API_KEY'))
+    except:
+        os.environ['PALM_API_KEY'] = st.secrets['PALM_API_KEY']
+        palm.configure(api_key = os.environ['PALM_API_KEY'])
     google.auth.default()
     
     # models = [m for m in palm.list_models() if 'embedText' in m.supported_generation_methods]
