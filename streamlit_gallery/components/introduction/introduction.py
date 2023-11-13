@@ -72,14 +72,17 @@ def ocr(image):
 
     # Mention the installed location of Tesseract-OCR in your system
     try:
-        pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract.exe'
+        pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
     except :
-        primary_path = 'streamlit_gallery/utils/tesseract.exe'
-        alternative_path = '../../utils/tesseract.exe'
+        primary_path = 'streamlit_gallery/utils/tesseract'
+        alternative_path = '../../utils/tesseract'
         try:
             pytesseract.pytesseract.tesseract_cmd = primary_path
         except:
-            pytesseract.pytesseract.tesseract_cmd = alternative_path
+            try:
+                pytesseract.pytesseract.tesseract_cmd = alternative_path
+            except:
+                pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 
     # Read image from which text needs to be extracted
     img = cv2.imread(image)
