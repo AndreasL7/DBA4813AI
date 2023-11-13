@@ -59,11 +59,27 @@ class SelfAttention(keras.layers.Layer):
 
 def ocr(image):
     img = Image.open(image)
-    model = LatexOCR()
-    model(img)
+    try:
+        model = LatexOCR()
+        model(img)
+    except:
+        primary_path = 'streamlit_gallery/utils/weights.pth'
+        alternative_path = '../../utils/weights.pth'
+        try:
+            LatexOCR.checkpoint_path = primary_path
+        except:
+            LatexOCR.checkpoint_path = alternative_path
 
     # Mention the installed location of Tesseract-OCR in your system
-    pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
+    try:
+        pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
+    except:
+        primary_path = 'streamlit_gallery/utils/tesseract'
+        alternative_path = '../../utils/tesseract'
+        try:
+            pytesseract.pytesseract.tesseract_cmd = primary_path
+        except:
+            pytesseract.pytesseract.tesseract_cmd = alternative_path
 
     # Read image from which text needs to be extracted
     img = cv2.imread(image)
