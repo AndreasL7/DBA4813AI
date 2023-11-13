@@ -88,8 +88,16 @@ def ocr(image):
                     try:
                         pytesseract.pytesseract.tesseract_cmd = '/app'
                     except:
-                        pytesseract.pytesseract.tesseract_cmd = '/app/lib/python3.9/site-packages'
-                
+                        try:
+                            pytesseract.pytesseract.tesseract_cmd = '/app/lib/python3.9/site-packages'
+                        except:
+                            try:
+                                pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/'
+                            except:
+                                try:
+                                    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/'
+                                except:
+                                    pytesseract.pytesseract.tesseract_cmd = '/bin/'
 
     # Read image from which text needs to be extracted
     img = cv2.imread(image)
