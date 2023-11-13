@@ -72,36 +72,36 @@ def ocr(image):
 
     # Mention the installed location of Tesseract-OCR in your system
     try:
-        # pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
-        pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+        pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
     except :
-        primary_path = 'streamlit_gallery/utils/tesseract'
-        alternative_path = '../../utils/tesseract'
-        try:
-            pytesseract.pytesseract.tesseract_cmd = primary_path
-        except:
-            try:
-                pytesseract.pytesseract.tesseract_cmd = alternative_path
-            except:
-                try:
-                    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
-                except:
-                    try:
-                        pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract'
-                    except:
-                        try:
-                            pytesseract.pytesseract.tesseract_cmd = '/app'
-                        except:
-                            try:
-                                pytesseract.pytesseract.tesseract_cmd = '/app/lib/python3.9/site-packages'
-                            except:
-                                try:
-                                    pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/'
-                                except:
-                                    try:
-                                        pytesseract.pytesseract.tesseract_cmd = '/usr/bin/'
-                                    except:
-                                        pytesseract.pytesseract.tesseract_cmd = '/bin/'
+        pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+        # primary_path = 'streamlit_gallery/utils/tesseract'
+        # alternative_path = '../../utils/tesseract'
+        # try:
+        #     pytesseract.pytesseract.tesseract_cmd = primary_path
+        # except:
+        #     try:
+        #         pytesseract.pytesseract.tesseract_cmd = alternative_path
+        #     except:
+        #         try:
+        #             pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+        #         except:
+        #             try:
+        #                 pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract'
+        #             except:
+        #                 try:
+        #                     pytesseract.pytesseract.tesseract_cmd = '/app'
+        #                 except:
+        #                     try:
+        #                         pytesseract.pytesseract.tesseract_cmd = '/app/lib/python3.9/site-packages'
+        #                     except:
+        #                         try:
+        #                             pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/'
+        #                         except:
+        #                             try:
+        #                                 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/'
+        #                             except:
+        #                                 pytesseract.pytesseract.tesseract_cmd = '/bin/'
 
     # Read image from which text needs to be extracted
     img = cv2.imread(image)
