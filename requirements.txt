@@ -8,7 +8,7 @@ pytesseract==0.3.10
 pix2tex==0.1.2
 transformers==4.35.0
 torch==2.1.0
-keras==2.15.0
+keras==2.14.0
 xgboost==1.7.3
 joblib==1.2.0
 numpy==1.24.3
