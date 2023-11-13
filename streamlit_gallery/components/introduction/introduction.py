@@ -73,7 +73,7 @@ def ocr(image):
     # Mention the installed location of Tesseract-OCR in your system
     try:
         # pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
-        pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract'
+        pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
     except :
         primary_path = 'streamlit_gallery/utils/tesseract'
         alternative_path = '../../utils/tesseract'
