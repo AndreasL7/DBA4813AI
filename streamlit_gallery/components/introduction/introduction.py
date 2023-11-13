@@ -71,37 +71,10 @@ def ocr(image):
             LatexOCR.checkpoint_path = alternative_path
 
     # Mention the installed location of Tesseract-OCR in your system
-    try:
-        pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
-    except :
-        pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
-        # primary_path = 'streamlit_gallery/utils/tesseract'
-        # alternative_path = '../../utils/tesseract'
-        # try:
-        #     pytesseract.pytesseract.tesseract_cmd = primary_path
-        # except:
-        #     try:
-        #         pytesseract.pytesseract.tesseract_cmd = alternative_path
-        #     except:
-        #         try:
-        #             pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
-        #         except:
-        #             try:
-        #                 pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract'
-        #             except:
-        #                 try:
-        #                     pytesseract.pytesseract.tesseract_cmd = '/app'
-        #                 except:
-        #                     try:
-        #                         pytesseract.pytesseract.tesseract_cmd = '/app/lib/python3.9/site-packages'
-        #                     except:
-        #                         try:
-        #                             pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/'
-        #                         except:
-        #                             try:
-        #                                 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/'
-        #                             except:
-        #                                 pytesseract.pytesseract.tesseract_cmd = '/bin/'
+    #for mac local
+    # pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
+    #for linux cloud
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
     # Read image from which text needs to be extracted
     img = cv2.imread(image)
