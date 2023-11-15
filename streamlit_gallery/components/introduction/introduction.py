@@ -1,8 +1,8 @@
 import warnings
 import streamlit as st
-from streamlit.uploaded_file_manager import UploadedFile
 import gc
 from joblib import load
+import PIL
 from PIL import Image
 import re
 import io
@@ -367,13 +367,14 @@ def main():
         if uploaded_file is not None:
             # To read file as bytes:
             
-            if isinstance(uploaded_file, UploadedFile):
+            if isinstance(uploaded_file, PIL.Image.Image):
+                image = uploaded_file
+            
+            else:
                 bytes_data = uploaded_file.getvalue()
                 
                 # To convert to a PIL Image object (if the file is an image)
-                image = Image.open(io.BytesIO(bytes_data))
-            else:
-                image = uploaded_file
+                image = Image.open(io.BytesIO(bytes_data))    
             
             file_extension = os.path.splitext(uploaded_file.name)[1]
             image_path = f"image{file_extension}"
