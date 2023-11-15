@@ -369,14 +369,15 @@ def main():
             
             if isinstance(uploaded_file, PIL.Image.Image):
                 image = uploaded_file
+                file_extension = ".png"
             
             else:
                 bytes_data = uploaded_file.getvalue()
                 
                 # To convert to a PIL Image object (if the file is an image)
                 image = Image.open(io.BytesIO(bytes_data))    
-            
-            file_extension = os.path.splitext(uploaded_file.name)[1]
+                file_extension = os.path.splitext(uploaded_file.name)[1]
+                
             image_path = f"image{file_extension}"
             image.save(image_path)
     
