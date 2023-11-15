@@ -346,7 +346,7 @@ def main():
         # File uploader allows user to add file
         uploaded_file = st.file_uploader("Upload an image...", type=['jpg', 'jpeg', 'png'])
         ###
-        st.markdown("Not sure what to upload? Why not try these sample questions?")
+        st.markdown("**Not sure what to upload?** Why not try these sample questions?")
         
         col_sampleA, col_sampleB = st.columns(2)
         with col_sampleA:
