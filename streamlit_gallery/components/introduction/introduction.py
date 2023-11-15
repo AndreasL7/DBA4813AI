@@ -352,23 +352,27 @@ def main():
             st.image(Image.open('streamlit_gallery/components/introduction/Forces 3.png'), caption='Sample Question 1', use_column_width=True)
             
             if st.button("Select", key="sampleA"):
-                uploaded_file = Image.open("streamlit_gallery/components/introduction/Forces 3.png", "rb")
+                uploaded_file = Image.open("streamlit_gallery/components/introduction/Forces 3.png")
 
         with col_sampleB:
             st.image(Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png"), caption='Sample Question 2', use_column_width=True)
             
             if st.button("Select", key="sampleB"):
-                uploaded_file = Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png", "rb")
+                uploaded_file = Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png")
         
         st.divider()
         
         ###
         if uploaded_file is not None:
             # To read file as bytes:
-            bytes_data = uploaded_file.getvalue()
             
-            # To convert to a PIL Image object (if the file is an image)
-            image = Image.open(io.BytesIO(bytes_data))
+            if isinstance(uploaded_file, UploadedFile):
+                bytes_data = uploaded_file.getvalue()
+                
+                # To convert to a PIL Image object (if the file is an image)
+                image = Image.open(io.BytesIO(bytes_data))
+            else:
+                image = uploaded_file
             
             file_extension = os.path.splitext(uploaded_file.name)[1]
             image_path = f"image{file_extension}"
