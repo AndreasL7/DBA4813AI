@@ -351,42 +351,14 @@ def main():
         with col_sampleA:
             st.image(Image.open('streamlit_gallery/components/introduction/Forces 3.png'), caption='Sample Question 1', use_column_width=True)
             
-            # if st.button("Choose me!"):
-            #     st.session_state['client_name'] = 'Supriyanto'
-            #     sampleA = {'tenure_months': 2,
-            #             'location': 'Jakarta',
-            #             'device_class': 'Mid End',
-            #             'games_product': 'Yes',
-            #             'music_product': 'Yes',
-            #             'education_product': 'Yes',
-            #             'video_product': 'Yes',
-            #             'call_center': 'No',
-            #             'use_myapp': 'No',
-            #             'payment_method': 'Pulsa',
-            #             'monthly_purchase_thou_idr_': 45.0,
-            #             'cltv_predicted_thou_idr_': 4210.7,}
-                
-            #     update_form_values(sampleA)
+            if st.button("Select", key="sampleA"):
+                uploaded_file = open("streamlit_gallery/components/introduction/Forces 3.png", "rb")
 
         with col_sampleB:
             st.image(Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png"), caption='Sample Question 2', use_column_width=True)
             
-            # if st.button("Pick me!"):
-            #     st.session_state['client_name'] = 'Aisyah'
-            #     sampleB = {'tenure_months': 66,
-            #             'location': 'Jakarta',
-            #             'device_class': 'High End',
-            #             'games_product': 'Yes',
-            #             'music_product': 'No',
-            #             'education_product': 'Yes',
-            #             'video_product': 'Yes',
-            #             'call_center': 'Yes',
-            #             'use_myapp': 'Yes',
-            #             'payment_method': 'Debit',
-            #             'monthly_purchase_thou_idr_': 137.345,
-            #             'cltv_predicted_thou_idr_': 6626.1,}
-                
-            #     update_form_values(sampleB)
+            if st.button("Select", key="sampleB"):
+                uploaded_file = open("streamlit_gallery/components/introduction/Nuclear Physics 2.png", "rb")
         
         st.divider()
         
