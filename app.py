@@ -62,16 +62,7 @@ def main():
 
     **Explore a Universe of Physics Subtopics:**
 
-    Our tool is equipped to assist you across a diverse range of physics areas. Here are the subtopics you can explore:
-
-    - Electric Fields
-    - Wave Motion
-    - Temperature and Ideal Gasses
-    - Nuclear Physics
-    - Forces
-    - D.C. Circuits
-    - Gravitational Field
-    - Quantum Physics
+    Our tool is equipped to assist you across a diverse range of physics areas. Here are the subtopics you can explore: **Electric Fields**, **Wave Motion**, **Temperature and Ideal Gasses**, **Nuclear Physics**, **Forces**, **D.C. Circuits**, **Gravitational Field**, and **Quantum Physics**.
 
     Whether you're unraveling the complexities of Nuclear Physics or exploring the intricacies of D.C. Circuits, our tool is designed to cater to your learning needs.
 
@@ -86,6 +77,7 @@ def main():
         st.caption("where Education meets AI")
         st.write("")
         st.markdown('Made by <a href="https://www.linkedin.com/in/andreaslukita7/">Andreas Lukita</a>', unsafe_allow_html=True)
+        st.markdown('Core contributor <a href="https://www.linkedin.com/in/emmanuel-er-241b25a2/">Emmanuel Er </a>, <a href="https://www.linkedin.com/in/bryan-choo/">Bryan Choo </a>, <a href="https://www.linkedin.com/in/jun-cao-teo-698511141/">Teo Jun Cao </a>, <a href="https://www.linkedin.com/in/dominicpoon/">Dominic Poon </a>', unsafe_allow_html=True)
 
         with st.expander("⏳ COMPONENTS", True):
             page.item("Introduction", components.show_introduction, default=True)
