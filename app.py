@@ -66,21 +66,21 @@ def main():
     Our tool is equipped to assist you across a diverse range of physics areas. Here are the subtopics you can explore:
     """)
     annotated_text(
-    ("**Electric Fields**"),
+    ("Electric Fields", "1"),
     " ",
-    ("**Wave Motion**"),
+    ("Wave Motion", "2"),
      " ",
-    ("**Temperature and Ideal Gasses**"),
+    ("Temperature and Ideal Gasses", "3"),
      " ",
-    ("**Nuclear Physics**"),
+    ("Nuclear Physics", "4"),
      " ",
-    ("**Forces**"),
+    ("Forces", "5"),
      " ",
-    ("**D.C. Circuits**"),
+    ("D.C. Circuits", "6"),
      " ",
-    ("**Gravitational Field**"),
+    ("Gravitational Field", "7"),
      " ",
-    ("**Quantum Physics**"),
+    ("Quantum Physics", "8"),
     )
 
     st.markdown("""
