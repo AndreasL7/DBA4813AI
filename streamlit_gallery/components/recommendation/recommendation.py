@@ -250,9 +250,9 @@ def main():
 
                     submitAnswer = st.expander("Click to view Answers")
                     with submitAnswer:
-                        displayVideo()
                         answer_output = html_with_css + parseAnswer(df.loc[lambda df_: df_['topic'] == st.session_state["predicted_topics"]], similar_question_indices[i])
                         st.markdown(answer_output, unsafe_allow_html=True)
+                        displayVideo()
         else:
             st.error("Unfortunately, an error occurred. Please try another question.")
     
