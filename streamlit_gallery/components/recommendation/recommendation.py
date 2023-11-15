@@ -152,24 +152,6 @@ def parseAnswer(df, questionNum):
 def embed_fn(model, text):
     return palm.generate_embeddings(model=model, text=text)
 
-# def find_most_similar_questions(questionnum, dataframe, top_n=5):
-#     # Create a DataFrame without the target question
-#     tempdf = dataframe.drop(dataframe.index[questionnum])
-
-#     # Calculate dot products with the target question's embedding
-#     dot_products = np.dot(np.stack(tempdf['Embeddings']), dataframe.iloc[questionnum]['Embeddings'])
-
-#     # Get the indices of the top N most similar questions
-#     top_indices = np.argpartition(dot_products, -top_n)[-top_n:]
-
-#     # Sort the top indices by dot product values in descending order
-#     top_indices = top_indices[np.argsort(-dot_products[top_indices])]
-
-#     # Return the top N most similar question indices (add 1 to match question numbering)
-#     most_similar_indices = top_indices + 1
-
-#     return list(most_similar_indices)
-
 def find_most_similar_questions(embedding, dataframe, top_n=5):
     # Stack embeddings into a 2D numpy array if they aren't already
     try:
@@ -194,12 +176,15 @@ def find_most_similar_questions(embedding, dataframe, top_n=5):
     except ValueError as e:
         return list()
         
-
 def get_topic(questionnum, dataframe):
     return dataframe.iloc[questionnum]['topic']
 
 def get_topics(questionnum, dataframe):
     return dataframe.iloc[questionnum]['related_topics'].strip('[]').replace("'", "")
+
+@st.cache_data
+def displayVideo():
+    st.video("https://www.youtube.com/watch?v=chuKr5QUHoQ&list=PLrRPUj1fM--uRhxggaQv53XgcjwWmXu8-&index=3", start_time=0)
 
 def main():
     
@@ -265,6 +250,7 @@ def main():
 
                     submitAnswer = st.expander("Click to view Answers")
                     with submitAnswer:
+                        displayVideo()
                         answer_output = html_with_css + parseAnswer(df.loc[lambda df_: df_['topic'] == st.session_state["predicted_topics"]], similar_question_indices[i])
                         st.markdown(answer_output, unsafe_allow_html=True)
         else:
