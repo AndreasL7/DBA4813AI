@@ -315,8 +315,8 @@ def make_prediction_hard_vote(loaded_models,
     return label_mapping.inverse_transform(final_prediction[0])
 
 
-def navigate_to_recommendation():
-    st.experimental_set_query_params(p="recommendation")
+# def navigate_to_recommendation():
+#     st.experimental_set_query_params(p="recommendation")
     
 def main():
     
@@ -412,11 +412,11 @@ def main():
             st.write("Need practice? Check out questions similar to this!")
             
             # Define your button and assign the navigation function to it
-            practice_button = st.button("Practice!", key="practice_button1")
+            # practice_button = st.button("Practice!", key="practice_button1")
 
-            if practice_button:
+            # if practice_button:
                 # Navigate to the recommendation page
-                navigate_to_recommendation()
+                # navigate_to_recommendation()
                 # Force a rerun of the script to reflect the query parameter change
                 # st.rerun()
         
@@ -453,11 +453,11 @@ def main():
             st.write("Need practice? Check out questions similar to this!")
             
             # Define your button and assign the navigation function to it
-            practice_button = st.button("Practice!", key="practice_button2")
+            # practice_button = st.button("Practice!", key="practice_button2")
 
-            if practice_button:
+            # if practice_button:
                 # Navigate to the recommendation page
-                navigate_to_recommendation()
+                # navigate_to_recommendation()
                 # Force a rerun of the script to reflect the query parameter change
                 # st.rerun()
         
