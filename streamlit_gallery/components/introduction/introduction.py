@@ -1,5 +1,6 @@
 import warnings
 import streamlit as st
+from streamlit.uploaded_file_manager import UploadedFile
 import gc
 from joblib import load
 from PIL import Image
