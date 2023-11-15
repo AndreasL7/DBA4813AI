@@ -349,7 +349,7 @@ def main():
         
         col_sampleA, col_sampleB = st.columns(2)
         with col_sampleA:
-            st.image(Image.open('Force 3.png'), caption='Sample Question 1', use_column_width=True)
+            st.image(Image.open('streamlit_gallery/components/introduction/Force 3.png'), caption='Sample Question 1', use_column_width=True)
             
             # if st.button("Choose me!"):
             #     st.session_state['client_name'] = 'Supriyanto'
@@ -369,7 +369,7 @@ def main():
             #     update_form_values(sampleA)
 
         with col_sampleB:
-            st.image(Image.open("Nuclear Physics 2.png"), caption='Sample Question 2', use_column_width=True)
+            st.image(Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png"), caption='Sample Question 2', use_column_width=True)
             
             # if st.button("Pick me!"):
             #     st.session_state['client_name'] = 'Aisyah'
