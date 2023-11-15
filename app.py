@@ -4,6 +4,7 @@ import requests
 
 from streamlit_gallery import components
 from streamlit_gallery.utils.page import page_group
+from annotated_text import annotated_text
 
 @st.cache_data
 def load_lottie_url(url: str):
@@ -62,8 +63,27 @@ def main():
 
     **Explore a Universe of Physics Subtopics:**
 
-    Our tool is equipped to assist you across a diverse range of physics areas. Here are the subtopics you can explore: **Electric Fields**, **Wave Motion**, **Temperature and Ideal Gasses**, **Nuclear Physics**, **Forces**, **D.C. Circuits**, **Gravitational Field**, and **Quantum Physics**.
+    Our tool is equipped to assist you across a diverse range of physics areas. Here are the subtopics you can explore:
+    """)
+    annotated_text(
+    ("**Electric Fields**"),
+    " ",
+    ("**Wave Motion**"),
+     " ",
+    ("**Temperature and Ideal Gasses**"),
+     " ",
+    ("**Nuclear Physics**"),
+     " ",
+    ("**Forces**"),
+     " ",
+    ("**D.C. Circuits**"),
+     " ",
+    ("**Gravitational Field**"),
+     " ",
+    ("**Quantum Physics**"),
+    )
 
+    st.markdown("""
     Whether you're unraveling the complexities of Nuclear Physics or exploring the intricacies of D.C. Circuits, our tool is designed to cater to your learning needs.
 
     **Begin Your Physics Adventure Today!**
