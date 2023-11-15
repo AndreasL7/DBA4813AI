@@ -409,7 +409,7 @@ def main():
             
             st.subheader(f"Predicted Topic: {hard_vote_prediction_result[0]}")
             st.session_state["predicted_topics"] = hard_vote_prediction_result[0]
-            st.write("Need practice? Check out questions similar to this!")
+            # st.write("Need practice? Check out questions similar to this!")
             
             # Define your button and assign the navigation function to it
             # practice_button = st.button("Practice!", key="practice_button1")
@@ -450,7 +450,7 @@ def main():
             
             st.subheader(f"Predicted Topic: {hard_vote_prediction_result[0]}")
             st.session_state["predicted_topics"] = hard_vote_prediction_result[0]
-            st.write("Need practice? Check out questions similar to this!")
+            # st.write("Need practice? Check out questions similar to this!")
             
             # Define your button and assign the navigation function to it
             # practice_button = st.button("Practice!", key="practice_button2")
