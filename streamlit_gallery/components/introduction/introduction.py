@@ -352,13 +352,13 @@ def main():
             st.image(Image.open('streamlit_gallery/components/introduction/Forces 3.png'), caption='Sample Question 1', use_column_width=True)
             
             if st.button("Select", key="sampleA"):
-                uploaded_file = open("streamlit_gallery/components/introduction/Forces 3.png", "rb")
+                uploaded_file = Image.open("streamlit_gallery/components/introduction/Forces 3.png", "rb")
 
         with col_sampleB:
             st.image(Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png"), caption='Sample Question 2', use_column_width=True)
             
             if st.button("Select", key="sampleB"):
-                uploaded_file = open("streamlit_gallery/components/introduction/Nuclear Physics 2.png", "rb")
+                uploaded_file = Image.open("streamlit_gallery/components/introduction/Nuclear Physics 2.png", "rb")
         
         st.divider()
         
