@@ -344,7 +344,52 @@ def main():
         
         # File uploader allows user to add file
         uploaded_file = st.file_uploader("Upload an image...", type=['jpg', 'jpeg', 'png'])
+        ###
+        st.markdown("Not sure what to upload? Why not try these sample questions?")
         
+        with col_sampleA:
+            st.image("Force 3.png", caption='Sample Question 1', use_column_width=True)
+            
+            # if st.button("Choose me!"):
+            #     st.session_state['client_name'] = 'Supriyanto'
+            #     sampleA = {'tenure_months': 2,
+            #             'location': 'Jakarta',
+            #             'device_class': 'Mid End',
+            #             'games_product': 'Yes',
+            #             'music_product': 'Yes',
+            #             'education_product': 'Yes',
+            #             'video_product': 'Yes',
+            #             'call_center': 'No',
+            #             'use_myapp': 'No',
+            #             'payment_method': 'Pulsa',
+            #             'monthly_purchase_thou_idr_': 45.0,
+            #             'cltv_predicted_thou_idr_': 4210.7,}
+                
+            #     update_form_values(sampleA)
+
+        with col_sampleB:
+            st.image("Nuclear Physics 2.png", caption='Sample Question 1', use_column_width=True)
+            
+            # if st.button("Pick me!"):
+            #     st.session_state['client_name'] = 'Aisyah'
+            #     sampleB = {'tenure_months': 66,
+            #             'location': 'Jakarta',
+            #             'device_class': 'High End',
+            #             'games_product': 'Yes',
+            #             'music_product': 'No',
+            #             'education_product': 'Yes',
+            #             'video_product': 'Yes',
+            #             'call_center': 'Yes',
+            #             'use_myapp': 'Yes',
+            #             'payment_method': 'Debit',
+            #             'monthly_purchase_thou_idr_': 137.345,
+            #             'cltv_predicted_thou_idr_': 6626.1,}
+                
+            #     update_form_values(sampleB)
+        
+        st.divider()
+        
+        ###
         if uploaded_file is not None:
             # To read file as bytes:
             bytes_data = uploaded_file.getvalue()
