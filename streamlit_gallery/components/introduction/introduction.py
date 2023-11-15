@@ -347,6 +347,7 @@ def main():
         ###
         st.markdown("Not sure what to upload? Why not try these sample questions?")
         
+        col_sampleA, col_sampleB = st.columns(2)
         with col_sampleA:
             st.image("Force 3.png", caption='Sample Question 1', use_column_width=True)
             
